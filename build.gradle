@@ -43,7 +43,14 @@ node {
     download = true
 }
 
-task javaScriptUnitTests(type: NpmTask, dependsOn: 'npmInstall') {
+task npmInstallDev(type: Exec) {
+    description = 'Install Node.js dependencies'
+    commandLine 'npm', 'install'
+    workingDir 'src/main/resources/public'
+}
+
+
+task javaScriptUnitTests(type: NpmTask, dependsOn: 'npmInstallDev') {
     description = 'Build JavaScript application'
     args = ['run', 'unittest'] // Replace with your build script
     workingDir = file("${projectDir}/src/main/resources/public")
