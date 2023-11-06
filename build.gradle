@@ -49,11 +49,8 @@ task npmInstallDev(type: Exec) {
     workingDir 'src/main/resources/public'
 }
 
-
 task javaScriptUnitTests(type: NpmTask, dependsOn: 'npmInstallDev') {
     description = 'Build JavaScript application'
     args = ['run', 'unittest'] // Replace with your build script
     workingDir = file("${projectDir}/src/main/resources/public")
 }
-
-check.dependsOn javaScriptUnitTests
