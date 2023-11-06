@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '3.1.0'
 	id 'io.spring.dependency-management' version '1.1.0'
+	 id "com.github.node-gradle.node" version "7.0.1"
 	id 'java'
 	id 'jacoco'
 }
@@ -32,4 +33,17 @@ jacocoTestReport {
 }
 test {
 	useJUnitPlatform()
+}
+
+node {
+    version = '18.12.0'
+	npmVersion = '8.19.2'
+    download = true
+}
+
+
+task javaScriptUnitTests(type: NpmTask, dependsOn: 'npmInstall') {
+    description = 'Build JavaScript application'
+    args = ['run', 'unittest'] // Replace with your build script
+    workingDir = file("${projectDir}/src/main/resources/public")
 }
