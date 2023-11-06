@@ -41,9 +41,10 @@ node {
     download = true
 }
 
-
 task javaScriptUnitTests(type: NpmTask, dependsOn: 'npmInstall') {
     description = 'Build JavaScript application'
     args = ['run', 'unittest'] // Replace with your build script
     workingDir = file("${projectDir}/src/main/resources/public")
 }
+
+check.dependsOn javaScriptUnitTests
