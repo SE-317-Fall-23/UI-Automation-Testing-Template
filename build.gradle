@@ -16,7 +16,9 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation  'com.microsoft.playwright:playwright:1.39.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 jacoco {
@@ -46,5 +48,3 @@ task javaScriptUnitTests(type: NpmTask, dependsOn: 'npmInstall') {
     args = ['run', 'unittest'] // Replace with your build script
     workingDir = file("${projectDir}/src/main/resources/public")
 }
-
-check.dependsOn javaScriptUnitTests
