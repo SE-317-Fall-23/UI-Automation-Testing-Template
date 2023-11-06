@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "unittest": "vitest --coverage"
+    "unittest": "./node_modules/.bin/vitest --coverage"
   },
   "keywords": [],
   "author": "",
