@@ -35,7 +35,7 @@ The user registration form comprises the following fields:
 
 - Verify the correctness of UI components, including labels and input acceptance. (1 point)
 - Ensure input validation by testing various scenarios for each field, including username, first name, last name, email address, and address details. (1 point)
-- Automate tests for submitting the user registration form to the server. (1 point)
+- Automate tests for submitting the user registration form to the server, and retretiving the user details of the submitted user. You can write a HTML to show user details or just make the api call via Playwright (1 point)
 - Handle various error scenarios from the server (e.g., invalid address, duplicate username) and verify that appropriate error messages are displayed to the user. (1 point)
 - Your test code should be readable, and follow the arrange, act, assert pattern. (1 point)
 
