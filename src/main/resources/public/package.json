@@ -4,15 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "unittest": "./node_modules/.bin/vitest --coverage"
+    "test": "playwright test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vitest/coverage-v8": "^0.34.6",
-    "concurrently": "^8.2.2",
-    "jsdom": "^22.1.0",
-    "vitest": "^0.34.6"
+    "playwright": "^1.39.0"
   }
 }

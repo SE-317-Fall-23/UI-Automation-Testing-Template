@@ -17,11 +17,14 @@ public class End2End {
     @Test
     public void testUserRegistrationPage() {
         try (Playwright playwright = Playwright.create()) {
+            //Arrange
             Browser browser = playwright.chromium().launch();
             Page page = browser.newPage();
+            
+            //Act
             page.navigate("http://localhost:" + port + "/");
 
-            // Expect a title "to contain" a substring.
+            //Assert
             assertThat(page).hasTitle(Pattern.compile("User Registration"));
         }
     }
